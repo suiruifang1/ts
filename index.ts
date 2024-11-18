@@ -34,5 +34,24 @@ if(typeof unkonwnType === 'number'){
 // void 不存在返回值 我的理解是类似于null
 function fun(message:string,code?:number):void{
     // ...
-    return
 }
+
+// 泛型
+let arr2:Array<number> = [1,2,3]
+
+let lastInArray = <T>(arr:T[]):T=>{
+    return arr[arr.length -1]
+}
+lastInArray([1,2,'3'])
+
+// ‌type‌：主要用于定义基本类型别名、联合类型、元组等。它也可以用来表示非对象类型，如基本类型、枚举、函数等。
+// ‌interface‌：主要用于描述对象类型，定义一个对象的结构。它不能表示非对象类型。
+// ‌type‌：可以通过&操作符来实现类似接口的继承。
+// ‌interface‌：可以通过extends关键字来继承其他接口。
+// ‌type‌：不能重复定义同一个名称的类型
+// ‌interface‌：可以多次定义同一个名称的接口，并且可以合并属性。
+
+// 常量断言 没有常量断言cst.name可以被修改
+const cst = {
+    name:'zhangsan',
+} as const
